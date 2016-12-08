@@ -1,0 +1,36 @@
+* {
+	outline: none;
+	box-sizing: border-box;
+	font: 20px 'Source Code Pro';
+}
+
+body {
+	background: #fff;
+	margin: 0;
+}
+
+#header {
+	position: fixed;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    background: #00f;
+    color: #fff;
+}
+
+#project {
+	padding-top: 85px;
+}
+
+h1 {
+	margin: 0;
+}
+
+#header a {
+	color: #fff;
+}
+#project a {
+	color: #00f;
+}
