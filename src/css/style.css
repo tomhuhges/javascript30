@@ -15,13 +15,20 @@ body {
 	display: flex;
 	flex-direction: row;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 200px;
     background: #00f;
     color: #fff;
 }
 
 #project {
 	padding-top: 85px;
+	min-height: 100vh;
+	display:flex;
+}
+
+#contents {
+	padding-top: 30px;
+	padding-left: 200px;
 }
 
 h1 {

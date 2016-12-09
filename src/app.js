@@ -8,7 +8,7 @@ class App extends React.Component {
 			<div>
 				<div id="header">
 					<Link to="/">Home</Link>
-					<h1>Javascript30</h1>
+					<h1>tom huhges // Javascript30</h1>
 				</div>
 				<div id="project" className={this.props.routes['1'].path}>
 					{this.props.children}
