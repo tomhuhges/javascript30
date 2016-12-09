@@ -5,7 +5,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 export default function prod (options) {
   return {
     output: {
-      publicPath: '/webpack-test/',
+      publicPath: '/javascript30/',
       filename: '[name].[chunkhash].js'
     },
     module: {
