@@ -1,36 +1,39 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TWOSAD4ME from 'file!./audio/2SAD4ME.mp3'
-import AIRHORN from 'file!./audio/AIRHORN.mp3'
+import Tracks from './Tracks'
 
 class AudioFiles extends React.Component {
 	constructor(props) {
 		super(props)
 
-		this.playAudio = this.playAudio.bind(this)
-		this.endAudio = this.endAudio.bind(this)
+		this.triggerAudio = this.triggerAudio.bind(this)
 	}
 	componentDidUpdate() {
-		this.playAudio()
+		this.triggerAudio()
 	}
-	playAudio() {
-		if ( this.props.availableKeys.a.isActive ) {
-			ReactDOM.findDOMNode(this.refs.a).currentTime = 0
-			ReactDOM.findDOMNode(this.refs.a).play()
-		} else {
-			ReactDOM.findDOMNode(this.refs.a).pause()
-			ReactDOM.findDOMNode(this.refs.a).currentTime = 0
+	triggerAudio() {
+		const key = this.props.databoxmessage.toLowerCase()
+		if ( key !== 'default' ) {
+			if ( this.props.availableKeys[key].isActive ) {
+				ReactDOM.findDOMNode(this.refs[key]).currentTime = 0
+				ReactDOM.findDOMNode(this.refs[key]).play()
+			} else {
+				ReactDOM.findDOMNode(this.refs[key]).pause()
+				ReactDOM.findDOMNode(this.refs[key]).currentTime = 0
+			}
 		}
 	}
-	endAudio() {
-		this.props.availableKeys.a.isActive = false
-		this.setState(Object.assign({},this.props))
-	}
 	render() {
+		const tracks = Tracks.map(track=>{
+			const key = Object.keys(track)[0]
+			const name = track[key]
+			return (
+				<audio data-id={key} ref={key} key={key}><source src={name} type="audio/mpeg" /></audio>
+			)
+		})
 		return (
 			<div className="audio">
-				<audio data-id="a" ref="a"><source src={TWOSAD4ME} type="audio/mpeg" /></audio>
-				<audio ref="s"><source src={AIRHORN} type="audio/mpeg" /></audio>
+				{tracks}
 			</div>
 		)
 	}

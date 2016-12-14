@@ -22,10 +22,9 @@ class One extends React.Component {
 				'l': { isActive: false },
 				'semicolon': { isActive: false }
 			},
-			databoxmessage: 'press some buttons m8'
+			databoxmessage: 'default'
 		}
 
-		this.playAudio = this.playAudio.bind(this)
 		this.endAudio = this.endAudio.bind(this)
 		this.mlg = this.mlg.bind(this)
 	}
@@ -33,12 +32,9 @@ class One extends React.Component {
 		ReactDOM.findDOMNode(this.refs.keyHandler).focus()
 	}
 	componentDidUpdate() {
-		if ( this.state.databoxmessage !== 'press some buttons m8' && Object.keys(this.state.availableKeys).every(a=>this.state.availableKeys[a].isActive === false) ) {
-			this.setState({ databoxmessage: 'press some buttons m8' })
+		if ( this.state.databoxmessage !== 'default' && Object.keys(this.state.availableKeys).every(a=>this.state.availableKeys[a].isActive === false) ) {
+			this.setState({ databoxmessage: 'default' })
 		}
-	}
-	playAudio() {
-
 	}
 	endAudio(e) {
 		const key = e.target.dataset.id
@@ -66,7 +62,7 @@ class One extends React.Component {
 			<div tabIndex="0" ref="keyHandler" onKeyDown={this.mlg} onEnded={this.endAudio}>
 				<Soundboard {...this.state.availableKeys} />
 				<Audio {...this.state} />
-				<Databox message={this.state.databoxmessage} />
+				<Databox message={this.state.databoxmessage === 'default' ? 'press some buttons m8' : this.state.databoxmessage} />
 			</div>
 		)
 	}
