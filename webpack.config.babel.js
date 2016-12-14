@@ -8,7 +8,9 @@ import prod from './webpack.config.prod'
 let paths = {
   src: path.join(__dirname, '/src'),
   build: path.join(__dirname, '/dist'),
-  css: path.join(__dirname, '/src/css')
+  css: path.join(__dirname, '/src/css'),
+  images: path.join(__dirname, '/src/components/projects'),
+  audio: path.join(__dirname, '/src/components/projects/one/audio')
 }
 
 let defaults = {
@@ -40,6 +42,11 @@ let defaults = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'javascript30 projects',
+      template: './src/index.ejs'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '200.html',
       title: 'javascript30 projects',
       template: './src/index.ejs'
     })

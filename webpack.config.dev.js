@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import webpack from 'webpack'
 
 export default function dev (options) {
   return {
@@ -21,9 +21,19 @@ export default function dev (options) {
     module: {
       loaders: [
         {
-          test: /\.css$/,
+          test: /\/**\/*\.css$/,
           loaders: ['style', 'css'],
-          include: options.paths.css
+          //include: options.paths.css
+        },
+        {
+          test: /\/**\/*\.(jpe?g|png|gif)$/i,
+          loader: 'file?name=[path][name].[hash].[ext]',
+          include: options.paths.images
+        },
+        {
+          test: /\/**\/*\.(mp3)$/i,
+          loader: 'file?name=[path][name].[hash].[ext]',
+          include: options.paths.audio
         }
       ]
     },
@@ -34,5 +44,5 @@ export default function dev (options) {
         multiStep: true
       })
     ]
-  };
+  }
 }

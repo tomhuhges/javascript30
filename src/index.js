@@ -4,6 +4,7 @@ import { Route, Router, IndexRoute, browserHistory } from 'react-router'
 import App from './app'
 import Contents from './components/Contents'
 import One from './components/projects/one/index.js'
+import Two from './components/projects/two/index.js'
 
 let googlefonts = document.createElement('link')
 googlefonts.href = 'https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400'
@@ -15,6 +16,7 @@ ReactDOM.render(
 		<Route path="/" component={App}>
 			<IndexRoute component={Contents} />
 			<Route path="one" component={One} />
+			<Route path="two" component={Two} />
 		</Route>
 	</Router>,
 	document.getElementById('app')

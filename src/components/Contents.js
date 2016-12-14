@@ -4,9 +4,15 @@ import { Link } from 'react-router'
 class Contents extends React.Component {
 	render() {
 		return (
-			<div id="contents">
+			<div>
+				<div id="header">
+					<Link to="/"><h1>tom huhges ~ Javascript30</h1></Link>
+				</div>
 				<h1>Contents</h1>
-				<Link to="one">project #1</Link>
+				<ul>
+				<li><Link to="one">project #1 - MLG soundboard</Link></li>
+				<li><Link to="two">project #2 - spike lee time</Link></li>
+				</ul>
 			</div>
 		)
 	}

@@ -1,11 +1,11 @@
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import webpack from 'webpack'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import CleanWebpackPlugin from 'clean-webpack-plugin'
 
 export default function prod (options) {
   return {
     output: {
-      publicPath: '/javascript30/',
+      publicPath: '/',
       filename: '[name].[chunkhash].js'
     },
     module: {
@@ -37,5 +37,5 @@ export default function prod (options) {
     }),
       new ExtractTextPlugin('[name].[chunkhash].css')
     ]
-  };
+  }
 }

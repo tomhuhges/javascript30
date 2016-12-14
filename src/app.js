@@ -3,15 +3,13 @@ import { Link } from 'react-router'
 
 class App extends React.Component {
 	render() {
-		console.log(this.props)
+		let page = this.props.children
+		let pageName = page.props.route.path ? page.props.route.path : 'contents'
 		return (
 			<div>
-				<div id="header">
-					<Link to="/">Home</Link>
-					<h1>tom huhges // Javascript30</h1>
-				</div>
-				<div id="project" className={this.props.routes['1'].path}>
-					{this.props.children}
+				<Link to="/" className="back">&lt;</Link>
+				<div id="project" className={pageName}>
+					{page}
 				</div>
 			</div>
 		)
