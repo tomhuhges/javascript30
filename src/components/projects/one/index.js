@@ -22,14 +22,15 @@ class One extends React.Component {
 				'l': { isActive: false },
 				'semicolon': { isActive: false }
 			},
-			databoxmessage: 'default'
+			databoxmessage: 'default',
+			latestEvent: ''
 		}
 
 		this.endAudio = this.endAudio.bind(this)
 		this.mlg = this.mlg.bind(this)
 	}
 	componentDidMount() {
-		ReactDOM.findDOMNode(this.refs.keyHandler).focus()
+		ReactDOM.findDOMNode(this.refs.eventHandler).focus()
 	}
 	componentDidUpdate() {
 		if ( this.state.databoxmessage !== 'default' && Object.keys(this.state.availableKeys).every(a=>this.state.availableKeys[a].isActive === false) ) {
@@ -39,7 +40,8 @@ class One extends React.Component {
 	endAudio(e) {
 		const key = e.target.dataset.id
 		const newData = update(this.state, {
-			availableKeys: {[key]: {isActive: {$set: false}}}
+			availableKeys: {[key]: {isActive: {$set: false}}},
+			latestEvent : {$set: 'end'}
 		})
 		this.setState(newData)
 	}
@@ -52,14 +54,15 @@ class One extends React.Component {
 
 			const newData = update(this.state, {
 				availableKeys: {[e.key]: {isActive: {$set: true}}},
-				databoxmessage : {$set: e.key.toUpperCase()}
+				databoxmessage : {$set: e.key.toUpperCase()},
+				latestEvent : {$set: 'key'}
 			})
 			this.setState(newData)
 		}
 	}
 	render() {
 		return (
-			<div tabIndex="0" ref="keyHandler" onKeyDown={this.mlg} onEnded={this.endAudio}>
+			<div tabIndex="0" ref="eventHandler" onKeyDown={this.mlg} onEnded={this.endAudio}>
 				<Soundboard {...this.state.availableKeys} />
 				<Audio {...this.state} />
 				<Databox message={this.state.databoxmessage === 'default' ? 'press some buttons m8' : this.state.databoxmessage} />

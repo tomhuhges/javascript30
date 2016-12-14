@@ -42,12 +42,12 @@ let defaults = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'javascript30 projects',
+      title: 'tomhuhges - javascript30 projects',
       template: './src/index.ejs'
     }),
     new HtmlWebpackPlugin({
       filename: '200.html',
-      title: 'javascript30 projects',
+      title: 'tomhuhges - javascript30 projects',
       template: './src/index.ejs'
     })
   ]

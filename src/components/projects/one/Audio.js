@@ -13,7 +13,7 @@ class AudioFiles extends React.Component {
 	}
 	triggerAudio() {
 		const key = this.props.databoxmessage.toLowerCase()
-		if ( key !== 'default' ) {
+		if ( key !== 'default' && this.props.latestEvent !== 'end') {
 			if ( this.props.availableKeys[key].isActive ) {
 				ReactDOM.findDOMNode(this.refs[key]).currentTime = 0
 				ReactDOM.findDOMNode(this.refs[key]).play()

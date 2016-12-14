@@ -11,7 +11,7 @@ class Contents extends React.Component {
 				<h1>Contents</h1>
 				<ul>
 				<li><Link to="one">project #1 - MLG soundboard</Link></li>
-				<li><Link to="two">project #2 - spike lee time</Link></li>
+				<li><Link to="two">project #2 - spike lee clock</Link></li>
 				</ul>
 			</div>
 		)

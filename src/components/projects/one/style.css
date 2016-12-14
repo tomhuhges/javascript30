@@ -12,15 +12,73 @@
 
 .computer {
 	width: auto;
-	max-height: 90vh;
+	height: 90vh;
 }
 
-.a, .s, .d, .f, .g, .h, .j, .k, .l, .semicolon {
+.a, .s, .d, .f, .g, .h, .j, .k, .l, .semicolon, .grey-computer {
+	width: 100%;
 	opacity: 0;
 	position: absolute;
 	top: 0;
 	left: 0;
-	transition: all 0.5s;
+}
+
+.grey-computer {
+	transition: opacity 6s;
+}
+.skeleton {
+	opacity: 0;
+	position: absolute;
+	top: 30%;
+	left: 90%;
+}
+.frog {
+	opacity: 0;
+	position: absolute;
+	width: 20%;
+	bottom: -5vh;
+	left: 20%;
+}
+.sanic {
+	opacity: 0;
+	position: absolute;
+	top: 20;
+	left: 0;
+}
+.mtndew {
+	opacity: 0;
+	position: absolute;
+	top: 32%;
+	left: 22%;
+}
+.deal {
+	opacity: 0;
+	position: absolute;
+	left: -10%;
+	width: 70%;
+	top: -5vh;
+	z-index:-1;
+}
+.hit {
+	opacity: 0;
+	position: absolute;
+	width: 10%;
+	top: 32%;
+	left: 22%;
+}
+.snoop {
+	opacity: 0;
+	position: absolute;
+	width: 10%;
+	bottom: -5vh;
+	left: 90%;
+}
+.frogs {
+	opacity: 0;
+	position: absolute;
+	width: 60%;
+	bottom: -5vh;
+	left: 40%;
 }
 
 .data-box {
