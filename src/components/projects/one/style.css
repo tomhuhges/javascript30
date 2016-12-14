@@ -1,0 +1,43 @@
+.one-content {
+	position: relative;
+}
+
+.one {
+	width: 100%;
+	background: #00a1ff;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+
+.computer {
+	width: auto;
+	max-height: 90vh;
+}
+
+.a, .s, .d, .f, .g, .h, .j, .k, .l, .semicolon {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.5s;
+}
+
+.data-box {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 30px;
+	color: #f7f7f7;
+	border: solid 2px;
+	border-radius: 5px;
+	width: 200px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.data-box p {
+	text-align: center;
+}

@@ -1,0 +1,43 @@
+* {
+	outline: none;
+	box-sizing: border-box;
+	font: 20px 'Source Code Pro';
+}
+
+body {
+	background: #f7f7f7;
+	color: #888;
+	margin: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+h1 {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+}
+
+#header {
+    padding: 30px 0;
+}
+
+#project {
+	min-height: 100vh;
+	display:flex;
+}
+
+.contents {
+	padding-top: 30px;
+	padding-left: 200px;
+}
+
+.back {
+	position: absolute;
+    padding: 30px;
+    color: #f7f7f7;
+    text-decoration: none;
+    font-size: 2em;
+}
+
